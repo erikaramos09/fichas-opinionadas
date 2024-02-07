@@ -1,35 +1,47 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import './App.css';
+import Card from "./components/Card";
+import ShowHide from './components/ShowHide';
+import libros from "./data/libros";
 
 function App() {
-  const [count, setCount] = useState(0)
-
-  return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+  const libroslist = libros.map(v => {
+    return <Card title={v.name} description ={v.description} image={v.image}/>
+  })
+return (
+  <div className="App">
+    <h1>Holi mundi</h1>
+    <div className='container'>
+    {/*<Card title="Titulo del libro"
+    description="reseña del libro" />
+    <Card />
+    <Card />
+<Card />*/}
+      {libroslist}
+    </div>
+   <ShowHide/> 
+  </div>
+  );
 }
 
-export default App
+export default App;
+
+/*<div className="contenedor">
+  <div className="titulo">
+    <h2>Títilo del libro</h2>
+  </div>
+  <div className="imagen">
+    <h2>Deposite una imagen aquí</h2>
+  </div>
+  <div className="reseña">
+    <p>La reseña va aquí</p>
+  </div>
+  <div className="autor">
+    <p>Autor:</p><input type="text"  />
+  </div>
+  <div className="pais"></div>
+  <div className="paginas"></div>
+  <div className="año"></div>
+  <div className="calificacion"></div>
+  <div className="opinion"></div>
+
+</div>;*/ 

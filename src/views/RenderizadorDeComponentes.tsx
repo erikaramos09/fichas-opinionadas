@@ -2,8 +2,7 @@ import TextoSimple from "../components/TextoSimple";
 import TextoLibre from "../components/TextoLibre";
 import TextoTitulo from "../components/TextoTitulo";
 import Imagen from "../components/Imagen";
-import Autor from "../components/Autor";
-import Pais from "../components/Autor";
+import StarRating from "../components/StarRating";
 
 function RenderizadorDeComponentes() {
   return (
@@ -22,16 +21,20 @@ function RenderizadorDeComponentes() {
         Texto Libre mediano: <TextoLibre texto="ola K ase" tamanio="m" />
       </div>
       <div>
-        Autor: <Autor tamanio="ch" autor={""} />
+        Autor: <TextoLibre tamanio="ch" texto={""} />
       </div>
       <div>
-        País: <Autor tamanio="ch" autor={""} />
+        País: <TextoLibre tamanio="ch" texto={""} />
       </div>
       <div>
-        Páginas: <Autor tamanio="ch" autor={""} />
+        Páginas: <TextoLibre tamanio="ch" texto={""} />
       </div>
       <div>
-        Año: <Autor tamanio="ch" autor={""} />
+        Año: <TextoLibre tamanio="ch" texto={""} />
+      </div>
+      <div className="App">
+        <h4>Calificación:</h4>
+        <StarRating />
       </div>
     </>
   );
